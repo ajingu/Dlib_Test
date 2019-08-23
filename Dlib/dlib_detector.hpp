@@ -11,9 +11,10 @@ using namespace dlib;
 class DlibDetector
 {
 private:
-	frontal_face_detector detector;
+	frontal_face_detector face_detector;
+	shape_predictor face_parts_predictor;
 
 public:
-	DlibDetector();
+	DlibDetector(std::string shapePredictorPath);
 	void Detect(const cv::Mat& img);
 };

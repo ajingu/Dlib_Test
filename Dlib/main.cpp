@@ -6,6 +6,7 @@
 using namespace std;
 using namespace cv;
 
+const string SHAPE_PREDICTOR_PATH = "data/shape_predictor_68_face_landmarks.dat";
 
 int main()
 {
@@ -13,7 +14,7 @@ int main()
 
 	VideoCapture cam(0);
 
-	DlibDetector detector = DlibDetector();
+	DlibDetector detector = DlibDetector(SHAPE_PREDICTOR_PATH);
 
 	if (!cam.isOpened())
 	{
